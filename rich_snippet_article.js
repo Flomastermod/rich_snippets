@@ -7,7 +7,7 @@ var image_list = [];
 // Pack all images into images array
 for(var i = 0; i < images.length; i++)
 {
-    image_list[i] = images[i].src;
+    image_list.push(images[i].src);
 };
 
 // Pack the rich snippet variable with our article's data
@@ -26,6 +26,9 @@ rich_script = document.createElement("script");
 
 // Give the script a class so I can select it easily
 rich_script.classList.add("rich-script");
+
+// Give the script the appropriate type for a rich snippet
+rich_script.type = "application/ld+json"
 
 // Pack the rich_snippet into the rich_script
 rich_script.innerHTML = rich_snippet_raw;
