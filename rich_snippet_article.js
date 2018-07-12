@@ -2,7 +2,9 @@
 var article_h1 = document.getElementsByTagName("h1")[0];
 var article_url = document.URL;
 var images = document.getElementsByClassName("rich-image");
-var image_list = [];
+var image_list = [
+    "https://d3ves0vn0b2jei.cloudfront.net/wp-content/uploads/2017/12/Bento-business-debit-card.jpg",
+];
 
 // Pack all images into images array
 for(var i = 0; i < images.length; i++)
