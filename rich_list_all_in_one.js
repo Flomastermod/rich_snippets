@@ -34,7 +34,7 @@ for(var i = 0; i < richItems.length; i++)
 
 // Pack the rich snippet variable with our article's data
 var richItemList = {
-  "@context": url,
+  "@context": "http://schema.org",
   "@type":"ItemList",
   "itemListElement": itemList
 };
