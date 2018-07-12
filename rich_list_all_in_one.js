@@ -20,13 +20,13 @@ var listItem = {
 
 // For every url, we need to create a listItem, then 
 // push it onto the itemList 
-for(var i = 0; i < rich_item.length; i++)
+for(var i = 0; i < richItems.length; i++)
 {
 	// Redefine the listItem every time
 	listItem = {
 		"@type": "ListItem",
 		"position": i + 1,
-		"url": richItems[i]
+		"url": richItems[i].href
 	};
 
     itemList.push(listItem);
@@ -52,7 +52,7 @@ richScript.classList.add("rich-script");
 richScript.type = "application/ld+json"
 
 // Pack the rich_snippet into the rich_script
-richScript.innerHTML = richSnippetRaw;
+richScript.innerHTML = richItemListRaw;
 
 // Append the rich_script to the closing body tag
-document.body.appendChild(rich_script);
+document.body.appendChild(richScript);
