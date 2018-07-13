@@ -20,7 +20,14 @@
         "image": image_list,
         "author": "Bento for Business",
         "datePublished": "6/14/2018",
-        "publisher": "Bento for Business",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Bento for Business",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://d3ves0vn0b2jei.cloudfront.net/wp-content/uploads/2018/02/bento-logo-retina-e1519672019840.png"
+            }
+        },
 	};
 
 	// Convert object to string
