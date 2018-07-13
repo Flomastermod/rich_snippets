@@ -14,10 +14,13 @@
 
 	// Pack the rich snippet variable with our article's data
 	var rich_snippet = {
-	  "@context": "http://schema.org",
-	  "@type": "Article",
-	  "headline": article_h1.textContent,
-	  "image": image_list,
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": article_h1.textContent,
+        "image": image_list,
+        "author": "Bento for Business",
+        "datePublished": "6/14/2018",
+        "publisher": "Bento for Business",
 	};
 
 	// Convert object to string
