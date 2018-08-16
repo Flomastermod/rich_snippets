@@ -10,7 +10,7 @@ var url = document.URL;
 var splitUrl = url.split("/");
 
 // Set sitename
-var sitename = splitUrl[0] + "//" + splitUrl[1] + "/" + splitUrl[2] + "/"; 
+var sitename = splitUrl[0] + "/" + splitUrl[1] + "/" + splitUrl[2] + "/"; 
 
 // Counter for how long url is
 var position = 1;
@@ -19,7 +19,7 @@ var position = 1;
 for(var i = 0; i < splitUrl.length; i++)
 {
 	// We don't care about "https:" and "" and "sitename"
-    if (i == 0 || i == 1  || i == 2 || splitUrl[i] == "")
+    if (i == 0 || i == 1  || i == 2 || splitUrl[i] == "" )
     {
 		// carry on
 		continue;
@@ -45,9 +45,14 @@ for(var i = 0; i < splitUrl.length; i++)
 			// Capitalize the instance of the split slug
 			var nameUpper = nameLetters[0].toUpperCase() + nameLetters.slice(1);
 			
-			// Add the instance of the split slug that has been prettified
-			// to the names array
-			names.push(nameUpper);
+			// Split uppercase name string 
+			var nameSplit = nameUpper.split(",");
+
+			// Join the split name
+			var nameJoined = nameSplit.join("");
+
+			// Add the instance of the split slug that has been prettified to the names array
+			names.push(nameJoined);
 		}
 
 		// Create a breadcrumb instance
@@ -57,13 +62,18 @@ for(var i = 0; i < splitUrl.length; i++)
 			"position": position,
 			"item":
 			{
-			  "@id": sitename + splitUrl[i],
+			  "@id": sitename + splitUrl[i] + "/",
 			  "name": names.join(" ") 
 			}
 		}
 
+		// Increment the position
 		position += 1;
+
+		// Increment the sitename so the slug is added
 		sitename = sitename + splitUrl[i] + "/";
+
+		// Push the breadcrumb to the breadCrumbContainer
 		breadCrumbContainer.push(breadCrumb);
 	}
 
