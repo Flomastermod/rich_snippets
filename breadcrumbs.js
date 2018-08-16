@@ -87,3 +87,20 @@ var BreadCrumbList =
   "itemListElement": breadCrumbContainer
 }
 
+// Convert the BreadCrumbList into a string
+var breadCrumbListString = JSON.stringify(BreadCrumbList);
+
+// Generate a script object to append to the closing body tag
+var richScript = document.createElement("script");
+
+// Give the script a class so I can select it easily
+richScript.classList.add("rich-script");
+
+// Give the script the appropriate type for a rich snippet
+richScript.type = "application/ld+json"
+
+// Pack the rich_snippet into the rich_script
+richScript.innerHTML = breadCrumbListString;
+
+// Append the rich_script to the closing body tag
+document.body.appendChild(richScript);
